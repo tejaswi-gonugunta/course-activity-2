@@ -1,0 +1,24 @@
+deficient = []
+perfect = []
+abundant = []
+max = int(input("enter max value"))
+min = int(input("enter min value"))
+
+for num in range(min, max):
+    add = 0
+    for i in range(1, num):
+       if(num % i == 0):
+            add = add + i
+    if(add == num):
+        perfect.append(num)
+    elif(add < num):
+        deficient.append(num)
+    else:
+        abundant.append(num)
+        
+print("abundant = ", abundant)
+print("\nsum of all abundant numbers is ",sum(abundant))
+print("\n\nperfect =",perfect)
+print("\nsum of all perfect numbers is ",sum(perfect))
+print("\n\ndeficient = ", deficient)  
+print("\nsum of all deficient numbers is ",sum(deficient))

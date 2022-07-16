@@ -1,0 +1,21 @@
+user_array = []
+
+
+def is_monotonic(arr):
+    
+  if all(arr[i] <= arr[i + 1] for i in range(len(arr) - 1)): 
+        return "monotone increasing"
+  elif all(arr[i] >= arr[i + 1] for i in range(len(arr) - 1)):
+        return "monotone decreasing"
+  return "not monotonic array"
+
+
+size = int(input("Enter the size of the array : "))
+
+
+for i in range(size):
+  n = int(input("Enter value for position {} : ".format(i)))
+  user_array.append(n)
+
+
+print("Input array is "+is_monotonic(user_array))
